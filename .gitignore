@@ -1,13 +1,4 @@
-﻿# Python
-*.pyc
-__pycache__/
-db.sqlite3
-.env
-
-# Django
-/staticfiles/
-/media/
-
+﻿
 # Node / React
 node_modules/
 build/
@@ -15,6 +6,3 @@ build/
 .env.development
 .env.production
 
-# OS
-.DS_Store
-Thumbs.db
