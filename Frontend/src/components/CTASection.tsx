@@ -37,9 +37,10 @@ const CTASection = () => {
       const currentTime = new Date().toLocaleString();
 
       // Prepare template parameters matching your EmailJS template
-      // Template uses: {{name}}, {{time}}, {{subject}}, {{message}}
+      // Template uses: {{name}}, {{email}}, {{time}}, {{subject}}, {{message}}
       const templateParams = {
         name: formState.name,
+        email: formState.email,
         time: currentTime,
         subject: formState.subject,
         message: formState.message,
