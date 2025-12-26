@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Compass, Target, Eye, Star, Users, TrendingUp, Award } from "lucide-react";
+import { ArrowRight, Target, Eye, Star, Users, Award } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import Logo from "@/assets/logo.jpeg";
 
 const HeroSection = () => {
   const scrollToContact = () => {
@@ -21,7 +22,7 @@ const HeroSection = () => {
       {/* Animated gradient orbs */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-white/10 to-transparent rounded-full blur-3xl animate-glow" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-l from-white/10 to-transparent rounded-full blur-3xl animate-glow delay-500" />
-      
+
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 items-center min-h-[80vh]">
           {/* Left Content - 7 columns */}
@@ -29,10 +30,14 @@ const HeroSection = () => {
             {/* Brand Badge */}
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md text-white px-6 py-3 rounded-full text-sm font-semibold border border-white/20 shadow-lg hover:bg-white/20 transition-all duration-300 animate-fade-in">
               <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-              <Compass className="w-4 h-4" />
+              <img
+                src={Logo}
+                alt="Sahan logo"
+                className="w-6 h-6 object-contain rounded-sm drop-shadow-[0_0_8px_rgba(92,192,255,0.4)]"
+              />
               <span>SAHAN - Journey of Exploration</span>
             </div>
-            
+
             {/* Main Heading */}
             <div className="space-y-6 animate-fade-in delay-100">
               <h1 className="text-4xl md:text-5xl lg:text-7xl font-black leading-[0.9] tracking-tight">
@@ -42,31 +47,32 @@ const HeroSection = () => {
                 </span>
                 <span className="block text-white">Brand's Journey</span>
               </h1>
-              
+
               <div className="w-24 h-1 bg-gradient-to-r from-white to-gray-400 rounded-full animate-fade-in delay-200" />
             </div>
-            
+
             {/* Description */}
             <p className="text-xl text-gray-400 leading-relaxed max-w-2xl font-medium animate-fade-in delay-300">
-              In the Somali language, the term <span className="text-white font-semibold">"Sahan"</span> means a journey of exploration, and that is the core of our philosophy. 
-              We believe building true influence is a journey, not a shortcut. We partner with you to navigate 
+              In the Somali language, the term <span className="text-white font-semibold">"Sahan"</span> means a journey of exploration, and that is the core of our philosophy.
+              We believe building true influence is a journey, not a shortcut. We partner with you to navigate
               the digital landscape, explore new audiences, and build authentic connections that create lasting impact.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in delay-400">
-              <Button 
-                size="lg" 
-                className="rounded-full px-8 py-4 text-lg font-semibold group shadow-xl hover:shadow-2xl transition-all duration-300 bg-white text-black hover:bg-white/90 hover:scale-105" 
+              <Button
+                size="lg"
+                className="rounded-full px-8 py-4 text-lg font-semibold group shadow-xl hover:shadow-2xl transition-all duration-300 bg-white text-black hover:bg-white/90 hover:scale-105"
                 onClick={scrollToContact}
               >
                 Start Your Journey
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="rounded-full px-8 py-4 text-lg font-semibold border-2 border-white/30 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/50 transition-all duration-300 text-white"
+                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Explore Our Work
               </Button>
@@ -95,9 +101,9 @@ const HeroSection = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500" />
               <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl group-hover:shadow-3xl transition-all duration-500">
-                <img 
-                  src={heroImage} 
-                  alt="Sahan Influence - Professional brand journey guidance" 
+                <img
+                  src={heroImage}
+                  alt="Sahan Influence - Professional brand journey guidance"
                   className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
@@ -118,12 +124,12 @@ const HeroSection = () => {
                 <h3 className="text-2xl font-bold text-foreground">Our Mission</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                To guide brands on their journey to authentic influence by creating strategic, 
+                To guide brands on their journey to authentic influence by creating strategic,
                 data-driven influencer partnerships that build trust and deliver measurable results.
               </p>
             </div>
           </div>
-          
+
           <div className="group relative">
             <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-secondary/5 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500" />
             <div className="relative bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 group-hover:border-white/30 transition-all duration-300 shadow-xl">
@@ -134,7 +140,7 @@ const HeroSection = () => {
                 <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed text-lg">
-                To create a world where influence is measured not just by numbers, but by the 
+                To create a world where influence is measured not just by numbers, but by the
                 depth of connection and the authenticity of the story.
               </p>
             </div>

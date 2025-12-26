@@ -24,11 +24,11 @@ const FeaturesSection = () => {
             <p className="text-lg text-gray-400 mb-8 leading-relaxed">
               We don't just manage your social media - we transform it into a powerful growth engine. Our data-driven strategies and creative expertise help businesses of all sizes achieve remarkable results.
             </p>
-            
+
             <div className="space-y-4 mb-8">
               {features.map((feature, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex items-start gap-3 animate-fade-in group hover:translate-x-2 transition-transform duration-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -45,9 +45,9 @@ const FeaturesSection = () => {
 
           <div className="relative animate-slide-in">
             <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl group">
-              <img 
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                alt="Business growth and analytics" 
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Business growth and analytics"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               />
             </div>

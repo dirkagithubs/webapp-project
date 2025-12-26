@@ -1,20 +1,25 @@
-import { MessageSquare, Facebook, Twitter, Instagram, Linkedin, Compass } from "lucide-react";
+import { MessageSquare, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import Logo from "@/assets/logo.jpeg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-black border-t border-white/10 py-12 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02),transparent)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02),transparent)] animate-pulse-soft"></div>
       <div className="container mx-auto relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-8">
           <div className="animate-fade-in">
             <div className="flex items-center gap-2 mb-4 group">
-              <div className="bg-white rounded-lg p-2 group-hover:scale-110 transition-transform duration-300">
-                <Compass className="w-5 h-5 text-black" />
+              <div className="animate-float">
+                <img
+                  src={Logo}
+                  alt="Sahan logo"
+                  className="w-10 h-10 object-contain rounded-md transition-transform duration-300 group-hover:scale-110"
+                />
               </div>
               <span className="text-2xl font-bold text-white">
-                SAHAN
+                SAHAN INFLUENCE
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed">
@@ -35,10 +40,10 @@ const Footer = () => {
           <div className="animate-fade-in delay-200">
             <h3 className="font-bold mb-4 text-white">Services</h3>
             <ul className="space-y-2 text-gray-400">
-              <li className="hover:text-white transition-colors duration-300">Influencer Discovery</li>
-              <li className="hover:text-white transition-colors duration-300">Full-Cycle Campaign Strategy</li>
-              <li className="hover:text-white transition-colors duration-300">End-to-End Management</li>
-              <li className="hover:text-white transition-colors duration-300">Performance & Reporting</li>
+              <li className="hover:text-white transition-all duration-300 hover:translate-x-1 cursor-pointer">Influencer Discovery</li>
+              <li className="hover:text-white transition-all duration-300 hover:translate-x-1 cursor-pointer">Full-Cycle Campaign Strategy</li>
+              <li className="hover:text-white transition-all duration-300 hover:translate-x-1 cursor-pointer">End-to-End Management</li>
+              <li className="hover:text-white transition-all duration-300 hover:translate-x-1 cursor-pointer">Performance & Reporting</li>
             </ul>
           </div>
 

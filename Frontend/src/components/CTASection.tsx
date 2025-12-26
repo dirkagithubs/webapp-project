@@ -17,16 +17,16 @@ const CTASection = () => {
     subject: "",
     message: ""
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
-  
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState(prev => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -35,7 +35,7 @@ const CTASection = () => {
     try {
       // Get current time formatted
       const currentTime = new Date().toLocaleString();
-      
+
       // Prepare template parameters matching your EmailJS template
       // Template uses: {{name}}, {{time}}, {{subject}}, {{message}}
       const templateParams = {
@@ -44,10 +44,10 @@ const CTASection = () => {
         subject: formState.subject,
         message: formState.message,
       };
-      
+
       // Send email using EmailJS
       await emailjs.send('service_dsacl73', 'template_pfm1rpd', templateParams);
-      
+
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
@@ -112,19 +112,19 @@ const CTASection = () => {
                   <span className="text-gray-300">Available 24/7 for our global partners</span>
                 </div>
               </div>
-              
+
               <div className="mt-8">
                 <div className="relative overflow-hidden rounded-xl shadow-lg group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                    alt="Modern office space" 
+                  <img
+                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80"
+                    alt="Modern office space"
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
               </div>
             </div>
-            
+
             <div className="text-left animate-fade-in" style={{ animationDelay: '0.3s' }}>
               {isSubmitted ? (
                 <div className="h-full flex flex-col items-center justify-center text-center p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/20 animate-bounce-in">
@@ -138,81 +138,81 @@ const CTASection = () => {
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/10 hover:border-white/20 transition-all duration-300">
                   {/* Contact Form */}
                   <form onSubmit={handleSubmit} className="space-y-4">
-                      <div className="space-y-2">
-                        <Label htmlFor="name">Your Name</Label>
-                        <Input 
-                          id="name" 
-                          name="name" 
-                          placeholder="John Doe" 
-                          value={formState.name}
-                          onChange={handleChange}
-                          required 
-                          className="h-12"
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="email">Email Address</Label>
-                        <Input 
-                          id="email" 
-                          name="email" 
-                          type="email" 
-                          placeholder="john@example.com" 
-                          value={formState.email}
-                          onChange={handleChange}
-                          required 
-                          className="h-12"
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="subject">Subject</Label>
-                        <Input 
-                          id="subject" 
-                          name="subject" 
-                          placeholder="How can we help you?" 
-                          value={formState.subject}
-                          onChange={handleChange}
-                          required 
-                          className="h-12"
-                        />
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Your Message</Label>
-                        <Textarea 
-                          id="message" 
-                          name="message" 
-                          placeholder="Tell us more about your project..." 
-                          value={formState.message}
-                          onChange={handleChange}
-                          required 
-                          className="min-h-[120px]"
-                        />
-                      </div>
-                      
-                      <Button 
-                        type="submit" 
-                        size="lg" 
-                        className="w-full rounded-full px-8 group" 
-                        disabled={isSubmitting}
-                      >
-                        {isSubmitting ? (
-                          <span className="flex items-center">
-                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            Sending...
-                          </span>
-                        ) : (
-                          <span className="flex items-center">
-                            Send Message
-                            <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </span>
-                        )}
-                      </Button>
-                    </form>
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Your Name</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="John Doe"
+                        value={formState.name}
+                        onChange={handleChange}
+                        required
+                        className="h-12"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="email">Email Address</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="john@example.com"
+                        value={formState.email}
+                        onChange={handleChange}
+                        required
+                        className="h-12"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="subject">Subject</Label>
+                      <Input
+                        id="subject"
+                        name="subject"
+                        placeholder="How can we help you?"
+                        value={formState.subject}
+                        onChange={handleChange}
+                        required
+                        className="h-12"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="message">Your Message</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        placeholder="Tell us more about your project..."
+                        value={formState.message}
+                        onChange={handleChange}
+                        required
+                        className="min-h-[120px]"
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      size="lg"
+                      className="w-full rounded-full px-8 group"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center">
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        <span className="flex items-center">
+                          Send Message
+                          <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                      )}
+                    </Button>
+                  </form>
                 </div>
               )}
             </div>
@@ -221,7 +221,7 @@ const CTASection = () => {
           <p className="text-sm text-gray-400">
             No credit card required • Cancel anytime
           </p>
-          
+
           {/* Error message display */}
           {error && (
             <div className="text-red-500 mb-4 text-center mt-4">

@@ -43,10 +43,10 @@ const TestimonialsSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/30 hover:bg-white/10 transition-all duration-500 animate-fade-in group hover:-translate-y-2 hover:shadow-2xl"
-              style={{ 
+              style={{
                 animationDelay: `${index * 100}ms`,
                 boxShadow: 'var(--shadow-soft)',
                 transition: 'var(--transition-smooth)'
@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
             >
               <CardContent className="p-6 relative bg-transparent">
                 <Quote className="absolute top-6 right-6 w-10 h-10 text-white/10 group-hover:text-white/20 transition-colors" />
-                
+
                 <div className="flex items-center gap-3 mb-4">
                   <Avatar className="w-12 h-12 border-2 border-white/20 group-hover:border-white/40 transition-colors">
                     <AvatarImage src={testimonial.image} alt={testimonial.name} />
@@ -65,13 +65,13 @@ const TestimonialsSection = () => {
                     <div className="text-sm text-gray-400">{testimonial.role}</div>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-white text-white/50" />
                   ))}
                 </div>
-                
+
                 <p className="text-gray-400 mb-0 italic leading-relaxed group-hover:text-gray-300 transition-colors">"{testimonial.content}"</p>
               </CardContent>
             </Card>

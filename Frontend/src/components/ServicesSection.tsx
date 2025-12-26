@@ -48,17 +48,17 @@ const ServicesSection = () => {
               "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
             ];
             return (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="border border-white/10 bg-white/5 backdrop-blur-sm hover:border-white/30 hover:bg-white/10 transition-all duration-500 hover:shadow-2xl animate-fade-in group overflow-hidden hover:-translate-y-2"
-                style={{ 
+                style={{
                   animationDelay: `${index * 100}ms`,
                   boxShadow: 'var(--shadow-soft)'
                 }}
               >
                 <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={serviceImages[index]} 
+                  <img
+                    src={serviceImages[index]}
                     alt={service.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
